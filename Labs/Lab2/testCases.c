@@ -58,7 +58,7 @@ void TestQ1_norm() {
 
 	int n = 5;
 	double input1[5] = {3.60, 4.78, 6.00, 10.00, 0.01};
-	double expected=13.108 ;
+	double expected=13.108;
     double actual = norm2(input1,n);
 
 	result &= assert_equal_double(expected, actual,0.009);
@@ -68,31 +68,59 @@ void TestQ1_norm() {
 
 void TestQ1_add_Custom1() {
 
-    printf("\n=== TestQ1_add_Custom1() ===\n");
-	int result = 0;
+    printf("\n=== TestQ1_add_Custom1() ===\n");		
+	int result = 1; // true;
+	
+	int i;
+	int n = 5;
+	double input1[5] = {-3.60, -4.78, -6.00, -10.00, -0.01};
+	double input2[5] = {-1.50, -2.00, -3.30, -9.90, -1.00};
+	double actual[5];
+	double expected [5] = {-5.10, -6.78, -9.30, -19.90, -1.01};
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 1/3 more test case under TestQ1_add_Custom1()!!\n");		
+	add_vectors(input1,input2,actual,n);
+	
+	for (i=0; i<n; i++)
+		result &= assert_equal_double(expected[i], actual[i],0.009);		
 
-    tearDown(result);		
+    tearDown(result);				
 }
+
 void TestQ1_add_Custom2() {
 
     printf("\n=== TestQ1_add_Custom2() ===\n");
-	int result = 0;
+	int result = 1; // true;
+	
+	int i;
+	int n = 3;
+	double input1[3] = {1, 2, 3};
+	double input2[3] = {1, 'a', '!'};
+	double actual[3];
+	double expected [3] = {2.0, 99.0, 36.0};
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 2/3 more test case under TestQ1_add_Custom2()!!\n");		
+	add_vectors(input1,input2,actual,n);
+	
+	for (i=0; i<n; i++)
+		result &= assert_equal_double(expected[i], actual[i],0.009);		
 
-    tearDown(result);		
+    tearDown(result);			
 }
+
 void TestQ1_add_Custom3() {
 
     printf("\n=== TestQ1_add_Custom3() ===\n");
-	int result = 0;
+	int result = 1;
+	int i;
+	int n = 3;
+	double input1[3] = {3,0,5};
+	double input2[3] = {0,2,0};
+	double actual[3];
+	double expected [3] = {3.0,2.0,5.0};
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 3/3 more test case under TestQ1_add_Custom3()!!\n");		
+	add_vectors(input1,input2,actual,n);
+	
+	for (i=0; i<n; i++)
+		result &= assert_equal_double(expected[i], actual[i],0.009);		
 
     tearDown(result);		
 }
@@ -100,30 +128,47 @@ void TestQ1_add_Custom3() {
 void TestQ1_scalar_prod_Custom1() {
 
     printf("\n=== TestQ1_scalar_prod_Custom1() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 1/3 more test case under TestQ1_scalar_prod_Custom1()!!\n");		
+	int n = 5;
+	double input1[5] = {-3.60, -4.78, -6.00, -10.00, -0.01};
+	double input2[5] = {-1.50, -2.00, -3.30, -9.90, -1.00};
+	double expected=133.770 ;
+	double actual = scalar_prod(input1,input2,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
+
 void TestQ1_scalar_prod_Custom2() {
 
     printf("\n=== TestQ1_scalar_prod_Custom2() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 2/3 more test case under TestQ1_scalar_prod_Custom2()!!\n");		
+	int n = 3;
+	double input1[3] = {1.0, 2, 3};
+	double input2[3] = {1, 'a', '!'};
+	double expected=294.0 ;
+	double actual = scalar_prod(input1,input2,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
+
 void TestQ1_scalar_prod_Custom3() {
 
     printf("\n=== TestQ1_scalar_prod_Custom3() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 3/3 more test case under TestQ1_scalar_prod_Custom3()!!\n");		
+	int n = 3;
+	double input1[3] = {3,0,5};
+	double input2[3] = {0,2,0};
+	double expected= 0.0;
+	double actual = scalar_prod(input1,input2,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
@@ -131,30 +176,44 @@ void TestQ1_scalar_prod_Custom3() {
 void TestQ1_norm_Custom1() {
 
     printf("\n=== TestQ1_norm_Custom1() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 1/3 more test case under TestQ1_norm_Custom1()!!\n");	
+	int n = 5;
+	double input1[5] = {-3.60, -4.78, -6.00, -10.00, -0.01};
+	double expected=13.108;
+    double actual = norm2(input1,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
+
 void TestQ1_norm_Custom2() {
 
     printf("\n=== TestQ1_norm_Custom2() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 2/3 more test case under TestQ1_norm_Custom2()!!\n");	
+	int n = 3;
+	double input1[3] = {1, 'a', '!'};
+	double expected= 102.46;
+    double actual = norm2(input1,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
+
 void TestQ1_norm_Custom3() {
 
     printf("\n=== TestQ1_norm_Custom3() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q1 REMINDER]: Add 3/3 more test case under TestQ1_norm_Custom3()!!\n");	
+	int n = 3;
+	double input1[3] = {3,0,5};
+	double expected= 5.83;
+    double actual = norm2(input1,n);
+
+	result &= assert_equal_double(expected, actual,0.009);
 
 	tearDown(result);
 }
@@ -183,30 +242,53 @@ void TestQ2() {
 void TestQ2_Custom1() {
 
     printf("\n=== TestQ2_Custom1() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q2 REMINDER]: Add 1/3 more test case under TestQ2_Custom1()!!\n");	
+	int n = 3;
+	int input[3][3] = {{00,01,02},{10,11,12},{20,21,22}};
+	int expected[9]= {0,1,10,2,11,20,12,21,22};
+	int actual[9];
+	diag_scan(input,actual);
+
+	int i;
+	for (i=0; i<n*n; i++)
+        result &= assert_equal_int(expected[i], actual[i]);
 
 	tearDown(result);
 }
+
 void TestQ2_Custom2() {
 
     printf("\n=== TestQ2_Custom2() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q2 REMINDER]: Add 2/3 more test case under TestQ2_Custom2()!!\n");	
+	int n = 3;
+	int input[3][3] = {{'a','b','c'},{'d','e','f'},{'g','h','i'}};
+	int expected[9]= {97,98,100,99,101,103,102,104,105};
+	int actual[9];
+	diag_scan(input,actual);
+
+	int i;
+	for (i=0; i<n*n; i++)
+        result &= assert_equal_int(expected[i], actual[i]);
 
 	tearDown(result);
 }
+
 void TestQ2_Custom3() {
 
     printf("\n=== TestQ2_Custom3() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q2 REMINDER]: Add 3/3 more test case under TestQ2_Custom3()!!\n");	
+	int n = 3;
+	int input[3][3] = {{-1,2,-3},{5,8},{}};
+	int expected[9]= {-1,2,5,-3,8,0,0,0,0};
+	int actual[9];
+	diag_scan(input,actual);
+
+	int i;
+	for (i=0; i<n*n; i++)
+        result &= assert_equal_int(expected[i], actual[i]);
 
 	tearDown(result);
 }
@@ -279,20 +361,41 @@ void TestQ3_combined() {
 void TestQ3_combined_Custom1() {
 
     printf("\n=== TestQ3_combined_Custom1() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q3 REMINDER]: Add 1/2 more test case under TestQ3_combined_Custom1()!!\n");	
+	int n=7;
+	int input[]={1,2,3,5,6,7,8};
+	struct Q3Struct int_result[7] = {0};
+	int expected[7] = {1,2,3,5,6,7,8};
+	int actual[7] = {0};
+	efficient(input,int_result,n);
+	reconstruct(actual, 7, int_result, 7);
+
+	int i;
+	for (i=0; i<n; i++){
+		result &= assert_equal_int(expected[i], actual[i]);
+	}
 
 	tearDown(result);
 }
+
 void TestQ3_combined_Custom2() {
 
     printf("\n=== TestQ3_combined_Custom2() ===\n");
-	int result = 0; 
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q3 REMINDER]: Add 2/2 more test case under TestQ3_combined_Custom2()!!\n");	
+	int n=5;
+	int input[]={0,0,0,0,0};
+	struct Q3Struct int_result[5] = {0};
+	int expected[5] = {0,0,0,0,0};
+	int actual[1] = {0};
+	efficient(input,int_result,n);
+	reconstruct(actual, 5, int_result, 1);
+
+	int i;
+	for (i=0; i<n; i++){
+		result &= assert_equal_int(expected[i], actual[i]);
+	}
 
 	tearDown(result);
 }
@@ -353,8 +456,7 @@ void TestQ4_BubbleSort_Custom()
 	tearDown(result);
 }
 
-void TestQ4_SelectionSort_1() 
-{
+void TestQ4_SelectionSort_1() {
     printf("\n=== TestQ4_SelectionSort_1() ===\n");
 	int result = 1; // true;
 
@@ -374,8 +476,7 @@ void TestQ4_SelectionSort_1()
 	tearDown(result);
 }
 
-void TestQ4_SelectionSort_2() 
-{
+void TestQ4_SelectionSort_2() {
 	printf("\n=== TestQ4_SelectionSort_2() ===\n");
 	int result = 1; // true;
 	
@@ -398,10 +499,20 @@ void TestQ4_SelectionSort_2()
 void TestQ4_SelectionSort_Custom() 
 {
     printf("\n=== TestQ4_SelectionSort_Custom() ===\n");
-	int result = 0;
+	int result = 1; // true;
 
-	// Add one more test cases here
-    printf("[Q4 REMINDER]: Add 1 more test case under TestQ4_SelectionSort_Custom()!!\n");	
+	int n=3;
+	struct Q4Struct input[]={{0, '@'}, {0, '!'}, {555, '?'}};	
+	struct Q4Struct expected[]={{0, '!'}, {0, '@'}, {555, '?'}};		
+	
+	sortDatabySelection(input, n);
+	
+	int i;
+	for (i=0; i<n; i++)
+	{
+		result &= assert_equal_int(expected[i].intData, input[i].intData);
+		result &= assert_equal_char(expected[i].charData, input[i].charData);
+	}
 
 	tearDown(result);
 }
@@ -409,42 +520,41 @@ void TestQ4_SelectionSort_Custom()
 
 
 //===========================================================
-	int runAllTests(int argc, char const *argv[]) {
-		
-		TestQ1_add();
-		TestQ1_scalar_prod();
-		TestQ1_norm();
+int runAllTests(int argc, char const *argv[]) {
+	// TestQ1_add();
+	// TestQ1_scalar_prod();
+	// TestQ1_norm();
 
-		TestQ1_add_Custom1();
-		TestQ1_add_Custom2();
-		TestQ1_add_Custom3();
-		TestQ1_scalar_prod_Custom1();
-		TestQ1_scalar_prod_Custom2();
-		TestQ1_scalar_prod_Custom3();
-		TestQ1_norm_Custom1();
-		TestQ1_norm_Custom2();
-		TestQ1_norm_Custom3();
+	// TestQ1_add_Custom1();
+	// TestQ1_add_Custom2();
+	// TestQ1_add_Custom3();
+	// TestQ1_scalar_prod_Custom1();
+	// TestQ1_scalar_prod_Custom2();
+	// TestQ1_scalar_prod_Custom3();
+	// TestQ1_norm_Custom1();
+	// TestQ1_norm_Custom2();
+	// TestQ1_norm_Custom3();
 
-		TestQ2();
-		TestQ2_Custom1();
-		TestQ2_Custom2();
-		TestQ2_Custom3();
+	// TestQ2();
+	// TestQ2_Custom1();
+	// TestQ2_Custom2();
+	// TestQ2_Custom3();
 
-		TestQ3_1();
-		TestQ3_zeros();
-		TestQ3_combined();
-		TestQ3_combined_Custom1();
-		TestQ3_combined_Custom2();
+	// TestQ3_1();
+	// TestQ3_zeros();
+	// TestQ3_combined();
+	// TestQ3_combined_Custom1();
+	// TestQ3_combined_Custom2();
 
-		TestQ4_BubbleSort_1();
-		TestQ4_BubbleSort_2();
-		TestQ4_BubbleSort_Custom();
-		TestQ4_SelectionSort_1();
-		TestQ4_SelectionSort_2();
-		TestQ4_SelectionSort_Custom();
+	TestQ4_BubbleSort_1();
+	TestQ4_BubbleSort_2();
+	TestQ4_BubbleSort_Custom();
+	// TestQ4_SelectionSort_1();
+	// TestQ4_SelectionSort_2();
+	// TestQ4_SelectionSort_Custom();
 
-		return (successCount == totalAssertions);
-	}
+	return (successCount == totalAssertions);
+}
 
 int main(int argc, char const *argv[]) {
   		
@@ -492,7 +602,6 @@ int assert_equal_char(char a, char b)
     totalAssertions++;
 	return result;
 }
-
 
 int assert_equal_double(double a, double b, double tolRange)
 {

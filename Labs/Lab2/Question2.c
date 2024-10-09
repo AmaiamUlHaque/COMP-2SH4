@@ -3,19 +3,17 @@
 
 #include "Questions.h"
 
-void diag_scan(int mat [][N3], int arr [])
-{
-
-    // This is the first programming (scripting) question without any initial setup as hints.
-
-    // This is also the first question requiring you to come up with an algorithm on paper 
-    // with mathematical analysis before implementing the code.
-
-    // High Level Hint:
-    //  Assume a 3x3 square matrix, look at the SUM of the row and column indices of each element.
-    //  You should be able to see a numerical pattern after doing so.
-
-
-    
-
+void diag_scan(int mat [][N3], int arr []) {
+    //int size = sizeof(mat);
+    int size = N3-1;
+    int i=0,j=0,n=0,k=0,index=0;
+    do {
+        for (i = k; i <= n; i++){
+            arr[index] = mat[i][n-j];
+            index++;
+            j++;
+        }
+        j=0;
+        (n<size)? n++: k++; //if false, then that mean n=size, so must increase k instead
+    } while (k<=size);
 }
