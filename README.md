@@ -1,4 +1,4 @@
-# COMP-2SH4: Principles of Programming
+# COMPENG 2SH4: Principles of Programming
 
 My course work of COMPENG 2SH4: Principles of Programming!
 
